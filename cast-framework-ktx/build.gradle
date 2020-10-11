@@ -1,7 +1,5 @@
-plugins {
-  id("com.android.library")
-  kotlin("android")
-}
+apply plugin : "com.android.library"
+apply plugin : "kotlin-android"
 
 android {
   compileSdkVersion(ProjectConfig.compileSdkVersion)
@@ -24,19 +22,18 @@ android {
   }
 
   testOptions.unitTests {
-    isIncludeAndroidResources = true
-    isReturnDefaultValues = true
+    returnDefaultValues = true
   }
 }
 
 dependencies {
   implementation(Deps.kotlinStdLib)
 
-  api(Deps.castSdk)
+  api(project(":cast-ktx"))
+  api(Deps.castFrameworkSdk)
 
   testImplementation(Deps.androidxTestCore)
   testImplementation(Deps.androidxJUnit)
   testImplementation(Deps.junit)
   testImplementation(Deps.truth)
-  testImplementation(Deps.robolectric)
 }

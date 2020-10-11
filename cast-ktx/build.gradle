@@ -1,7 +1,5 @@
-plugins {
-  id("com.android.library")
-  kotlin("android")
-}
+apply plugin : "com.android.library"
+apply plugin : "kotlin-android"
 
 android {
   compileSdkVersion(ProjectConfig.compileSdkVersion)
@@ -24,16 +22,15 @@ android {
   }
 
   testOptions.unitTests {
-    isIncludeAndroidResources = true
-    isReturnDefaultValues = true
+    includeAndroidResources = true
+    returnDefaultValues = true
   }
 }
 
 dependencies {
   implementation(Deps.kotlinStdLib)
 
-  api(project(":cast-ktx"))
-  api(Deps.castTvSdk)
+  api(Deps.castSdk)
 
   testImplementation(Deps.androidxTestCore)
   testImplementation(Deps.androidxJUnit)
