@@ -1,0 +1,17 @@
+*.iml
+.gradle
+/local.properties
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+.idea/caches/
+.idea/libraries/
+.idea/shelf/
+.idea/.name
+.idea/copyright/profiles_settings.xml
+.idea/scopes/scope_settings.xml
+.idea/*.xml
