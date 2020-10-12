@@ -1,5 +1,5 @@
-apply plugin : "com.android.library"
-apply plugin : "kotlin-android"
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
 
 android {
   compileSdkVersion(ProjectConfig.compileSdkVersion)
@@ -9,7 +9,6 @@ android {
     targetSdkVersion(ProjectConfig.targetSdkVersion)
 
     consumerProguardFiles("proguard-rules.pro")
-    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
 
   compileOptions {
