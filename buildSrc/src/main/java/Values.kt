@@ -1,6 +1,6 @@
 object ProjectConfig {
-  const val compileSdkVersion = 29
-  const val targetSdkVersion = 29
+  const val compileSdkVersion = 30
+  const val targetSdkVersion = 30
   const val minSdkVersion = 19
 }
 
