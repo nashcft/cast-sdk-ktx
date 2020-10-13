@@ -6,7 +6,7 @@ import com.google.android.gms.cast.tv.CastReceiverOptions
 /**
  * Create a [CastReceiverOptions] object.
  */
-fun castReceiverOptions(
+inline fun castReceiverOptions(
   context: Context,
   init: CastReceiverOptions.Builder.() -> Unit
 ): CastReceiverOptions = CastReceiverOptions.Builder(context).apply(init).build()
