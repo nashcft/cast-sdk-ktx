@@ -6,7 +6,7 @@ object ProjectConfig {
 
 object Deps {
 
-  const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0-alpha13"
+  const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0-alpha15"
 
   private const val kotlinVersion = "1.4.10"
   const val kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
@@ -20,6 +20,6 @@ object Deps {
   const val androidxJUnit = "androidx.test.ext:junit-ktx:1.1.2"
   const val robolectric = "org.robolectric:robolectric:4.5-alpha-1"
 
-  const val junit = "junit:junit:4.13"
-  const val truth = "com.google.truth:truth:1.0.1"
+  const val junit = "junit:junit:4.13.1"
+  const val truth = "com.google.truth:truth:1.1"
 }
