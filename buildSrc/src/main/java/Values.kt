@@ -12,6 +12,9 @@ object Deps {
   const val kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
   const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 
+  private const val coroutinesVersion = "1.4.0"
+  const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+
   const val castSdk = "com.google.android.gms:play-services-cast:19.0.0"
   const val castFrameworkSdk = "com.google.android.gms:play-services-cast-framework:19.0.0"
   const val castTvSdk = "com.google.android.gms:play-services-cast-tv:17.0.0"
@@ -22,4 +25,5 @@ object Deps {
 
   const val junit = "junit:junit:4.13.1"
   const val truth = "com.google.truth:truth:1.1"
+  const val mockk = "io.mockk:mockk:1.10.2"
 }

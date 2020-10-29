@@ -21,12 +21,15 @@ android {
   }
 
   testOptions.unitTests {
+    includeAndroidResources = true
     returnDefaultValues = true
   }
 }
 
 dependencies {
   implementation(Deps.kotlinStdLib)
+
+  implementation(Deps.coroutinesCore)
 
   api(project(":cast-ktx"))
   api(Deps.castFrameworkSdk)
@@ -35,4 +38,5 @@ dependencies {
   testImplementation(Deps.androidxJUnit)
   testImplementation(Deps.junit)
   testImplementation(Deps.truth)
+  testImplementation(Deps.mockk)
 }
