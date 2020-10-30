@@ -34,7 +34,7 @@ dependencies {
 
   testImplementation(Deps.androidxTestCore)
   testImplementation(Deps.androidxJUnit)
+  testImplementation(Deps.robolectric)
   testImplementation(Deps.junit)
   testImplementation(Deps.truth)
-  testImplementation(Deps.robolectric)
 }
