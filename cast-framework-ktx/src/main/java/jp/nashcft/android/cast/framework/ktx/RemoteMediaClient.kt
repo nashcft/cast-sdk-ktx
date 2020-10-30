@@ -7,6 +7,9 @@ import com.google.android.gms.cast.framework.media.RemoteMediaClient
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
 
+/**
+ * Await the result of [RemoteMediaClient.load] without blocking a thread.
+ */
 suspend fun RemoteMediaClient.awaitLoad(
   mediaInfo: MediaInfo,
   mediaLoadOptions: MediaLoadOptions
@@ -16,6 +19,9 @@ suspend fun RemoteMediaClient.awaitLoad(
   result.setResultCallback { cont.resume(it) }
 }
 
+/**
+ * Await the result of [RemoteMediaClient.load] without blocking a thread.
+ */
 suspend fun RemoteMediaClient.awaitLoad(
   mediaLoadRequestData: MediaLoadRequestData
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine { cont ->
