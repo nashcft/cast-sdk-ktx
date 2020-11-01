@@ -1,6 +1,5 @@
 package jp.nashcft.android.cast.framework.ktx
 
-import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.android.gms.cast.MediaInfo
 import com.google.android.gms.cast.MediaLoadOptions
 import com.google.android.gms.cast.MediaLoadRequestData
@@ -9,22 +8,16 @@ import com.google.android.gms.cast.MediaSeekOptions
 import com.google.android.gms.cast.MediaStatus
 import com.google.android.gms.cast.TextTrackStyle
 import com.google.android.gms.cast.framework.media.RemoteMediaClient
-import com.google.android.gms.common.api.PendingResult
-import com.google.android.gms.common.api.ResultCallback
-import com.google.android.gms.common.api.Status
-import com.google.common.truth.Truth.assertThat
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
-import jp.nashcft.android.cast.ktx.mediaError
 import kotlinx.coroutines.runBlocking
 import org.json.JSONObject
 import org.junit.Test
-import org.junit.runner.RunWith
-import java.util.concurrent.*
 
-@RunWith(AndroidJUnit4::class)
 class RemoteMediaClientTest {
+
+  private val mockPendingResult = createMockPendingResult<RemoteMediaClient.MediaChannelResult>()
 
   @Test
   fun `awaitLoad with MediaLoadRequestData`(): Unit = runBlocking {
@@ -39,27 +32,10 @@ class RemoteMediaClientTest {
   }
 
   @Test
-  fun `awaitLoad with MediaLoadRequestData throws an exception`(): Unit = runBlocking {
-    val remoteMediaClient = mockk<RemoteMediaClient> {
-      every { load(any() as MediaLoadRequestData) } throws IllegalStateException("error!!")
-    }
-
-    try {
-      remoteMediaClient.awaitLoad(mockk())
-      error("should not be reached here")
-    } catch (th: Throwable) {
-      assertThat(th).hasMessageThat().isEqualTo("error!!")
-    }
-  }
-
-  @Test
   fun `awaitLoad with MediaInfo and MediaLoadOptions`(): Unit = runBlocking {
     val remoteMediaClient = mockk<RemoteMediaClient> {
       every {
-        load(
-          any() as MediaInfo,
-          any() as MediaLoadOptions
-        )
+        load(any() as MediaInfo, any() as MediaLoadOptions)
       } returns mockPendingResult
     }
 
@@ -109,12 +85,7 @@ class RemoteMediaClientTest {
   fun awaitQueueInsertAndPlayItem(): Unit = runBlocking {
     val remoteMediaClient = mockk<RemoteMediaClient> {
       every {
-        queueInsertAndPlayItem(
-          any(),
-          any(),
-          any(),
-          any()
-        )
+        queueInsertAndPlayItem(any(), any(), any(), any())
       } returns mockPendingResult
     }
 
@@ -433,35 +404,5 @@ class RemoteMediaClientTest {
     remoteMediaClient.awaitStop()
 
     verify { remoteMediaClient.stop(null) }
-  }
-
-  private val mockPendingResult = object : PendingResult<RemoteMediaClient.MediaChannelResult>() {
-
-    private val result = mockk<RemoteMediaClient.MediaChannelResult> {
-      every { customData } returns JSONObject("""{ "test": "test ok" }""")
-      every { status } returns Status(com.google.android.gms.common.api.CommonStatusCodes.SUCCESS)
-      every { mediaError } returns mediaError { }
-    }
-
-    override fun await(): RemoteMediaClient.MediaChannelResult = result
-
-    override fun await(p0: Long, p1: TimeUnit): RemoteMediaClient.MediaChannelResult = result
-
-    override fun cancel() {
-    }
-
-    override fun isCanceled(): Boolean = false
-
-    override fun setResultCallback(p0: ResultCallback<in RemoteMediaClient.MediaChannelResult>) {
-      p0.onResult(result)
-    }
-
-    override fun setResultCallback(
-      p0: ResultCallback<in RemoteMediaClient.MediaChannelResult>,
-      p1: Long,
-      p2: TimeUnit
-    ) {
-      p0.onResult(result)
-    }
   }
 }
