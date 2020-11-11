@@ -6,7 +6,7 @@ import org.junit.Test
 class CastMediaOptionsTest {
 
   @Test
-  fun `CastMediaOptions builder works`()  {
+  fun `CastMediaOptions builder works`() {
     val activityName = "TestActivity"
     val receiverName = "TestReceiver"
     val options = castMediaOptions {
@@ -27,7 +27,7 @@ class CastMediaOptionsTest {
     val activityName = "TargetActivity"
     val skipStep = 100_000L
     val options = castMediaOptions {
-      setNotificationsOptions {
+      setNotificationOptions {
         setTargetActivityClassName(activityName)
         setSkipStepMs(skipStep)
       }

@@ -58,7 +58,7 @@ inline fun castMediaOptions(init: CastMediaOptions.Builder.() -> Unit): CastMedi
 /**
  * Set [NotificationOptions] created from the [builder] function.
  */
-inline fun CastMediaOptions.Builder.setNotificationsOptions(
+inline fun CastMediaOptions.Builder.setNotificationOptions(
   builder: NotificationOptions.Builder.() -> Unit
 ) {
   setNotificationOptions(notificationOptions(builder))
