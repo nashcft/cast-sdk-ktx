@@ -6,7 +6,7 @@ object ProjectConfig {
 
 object Deps {
 
-  const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0-alpha15"
+  const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0-beta01"
 
   private const val kotlinVersion = "1.4.20"
   const val kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
