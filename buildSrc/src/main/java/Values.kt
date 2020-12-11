@@ -8,7 +8,7 @@ object Deps {
 
   const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0-beta01"
 
-  private const val kotlinVersion = "1.4.20"
+  private const val kotlinVersion = "1.4.21"
   const val kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
   const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 
