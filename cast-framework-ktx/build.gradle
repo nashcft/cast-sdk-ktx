@@ -36,7 +36,6 @@ dependencies {
 
   testImplementation(Deps.androidxTestCore)
   testImplementation(Deps.androidxJUnit)
-  testImplementation(Deps.junit)
   testImplementation(Deps.truth)
   testImplementation(Deps.mockk)
 }
