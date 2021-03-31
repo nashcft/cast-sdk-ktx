@@ -36,4 +36,5 @@ dependencies {
   testImplementation(Deps.androidxJUnit)
   testImplementation(Deps.robolectric)
   testImplementation(Deps.truth)
+  testImplementation(Deps.mockk)
 }
