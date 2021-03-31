@@ -6,13 +6,13 @@ object ProjectConfig {
 
 object Deps {
 
-  const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0-beta04"
+  const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0-beta06"
 
-  private const val kotlinVersion = "1.4.21"
+  private const val kotlinVersion = "1.4.32"
   const val kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
   const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 
-  private const val coroutinesVersion = "1.4.2"
+  private const val coroutinesVersion = "1.4.3"
   const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
 
   const val castSdk = "com.google.android.gms:play-services-cast:19.0.0"
@@ -21,8 +21,8 @@ object Deps {
 
   const val androidxTestCore = "androidx.test:core-ktx:1.3.0"
   const val androidxJUnit = "androidx.test.ext:junit-ktx:1.1.2"
-  const val robolectric = "org.robolectric:robolectric:4.5"
+  const val robolectric = "org.robolectric:robolectric:4.5.1"
 
   const val truth = "com.google.truth:truth:1.1.2"
-  const val mockk = "io.mockk:mockk:1.10.5"
+  const val mockk = "io.mockk:mockk:1.11.0"
 }
