@@ -73,4 +73,17 @@ class MediaStatusModifierTest {
       assertThat(width).isEqualTo(w)
     }
   }
+
+  @Test
+  fun `configureMediaTracksModifier applies the specified changes properly`() {
+    val activeTracks = longArrayOf(1, 2, 5)
+    val mediaStatusModifier = MediaStatusModifier()
+    mediaStatusModifier.configureMediaTracksModifier {
+      setActiveTrackIds(activeTracks)
+    }
+
+    with(mediaStatusModifier.mediaTracksModifier) {
+      assertThat(activeTrackIds).containsExactlyElementsIn(activeTrackIds)
+    }
+  }
 }

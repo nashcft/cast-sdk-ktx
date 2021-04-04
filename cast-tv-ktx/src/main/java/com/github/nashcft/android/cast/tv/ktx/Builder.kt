@@ -3,17 +3,20 @@ package com.github.nashcft.android.cast.tv.ktx
 import android.content.Context
 import com.github.nashcft.android.cast.ktx.adBreakStatus
 import com.github.nashcft.android.cast.ktx.mediaLiveSeekableRange
-import com.github.nashcft.android.cast.ktx.mediaLoadRequestData
 import com.github.nashcft.android.cast.ktx.mediaQueueData
+import com.github.nashcft.android.cast.ktx.textTrackStyle
+import com.github.nashcft.android.cast.ktx.vastAdsRequest
 import com.github.nashcft.android.cast.ktx.videoInfo
 import com.google.android.gms.cast.AdBreakStatus
 import com.google.android.gms.cast.MediaLiveSeekableRange
-import com.google.android.gms.cast.MediaLoadRequestData
 import com.google.android.gms.cast.MediaQueueData
+import com.google.android.gms.cast.TextTrackStyle
+import com.google.android.gms.cast.VastAdsRequest
 import com.google.android.gms.cast.VideoInfo
 import com.google.android.gms.cast.tv.CastReceiverOptions
 import com.google.android.gms.cast.tv.media.MediaInfoModifier
 import com.google.android.gms.cast.tv.media.MediaManager
+import com.google.android.gms.cast.tv.media.MediaMetadataModifier
 import com.google.android.gms.cast.tv.media.MediaQueueManager
 import com.google.android.gms.cast.tv.media.MediaStatusModifier
 import com.google.android.gms.cast.tv.media.MediaTracksModifier
@@ -25,13 +28,6 @@ inline fun castReceiverOptions(
   context: Context,
   init: CastReceiverOptions.Builder.() -> Unit
 ): CastReceiverOptions = CastReceiverOptions.Builder(context).apply(init).build()
-
-/**
- * Set [MediaLoadRequestData] created from the [builder] function.
- */
-inline fun MediaManager.setDataFromLoad(builder: MediaLoadRequestData.Builder.() -> Unit) {
-  setDataFromLoad(mediaLoadRequestData(builder))
-}
 
 /**
  * Apply the specified function [block] to [MediaQueueManager].
@@ -118,4 +114,25 @@ inline fun MediaStatusModifier.setVideoInfo(
   builder: VideoInfo.Builder.() -> Unit
 ): MediaStatusModifier = setVideoInfo(videoInfo(builder))
 
-// TODO: MediaInfoModifier, MediaTracksModifier
+/**
+ * Set [MediaMetadataModifier] created from the [builder] function.
+ */
+inline fun MediaInfoModifier.setMetadataModifier(
+  builder: MediaMetadataModifier.() -> Unit
+) {
+  metadataModifier = MediaMetadataModifier().apply(builder)
+}
+
+/**
+ * Set [TextTrackStyle] created from the [builder] function.
+ */
+inline fun MediaInfoModifier.setTextTrackStyle(
+  builder: TextTrackStyle.() -> Unit
+): MediaInfoModifier = setTextTrackStyle(textTrackStyle(builder))
+
+/**
+ * Set [VastAdsRequest] created from the [builder] function.
+ */
+inline fun MediaInfoModifier.setVmapAdsRequest(
+  builder: VastAdsRequest.Builder.() -> Unit
+): MediaInfoModifier = setVmapAdsRequest(vastAdsRequest(builder))
