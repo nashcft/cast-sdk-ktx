@@ -18,6 +18,7 @@ import com.google.android.gms.cast.MediaQueueData
 import com.google.android.gms.cast.MediaQueueItem
 import com.google.android.gms.cast.MediaSeekOptions
 import com.google.android.gms.cast.MediaTrack
+import com.google.android.gms.cast.TextTrackStyle
 import com.google.android.gms.cast.VastAdsRequest
 import com.google.android.gms.cast.VideoInfo
 import org.json.JSONObject
@@ -201,6 +202,12 @@ inline fun mediaTrack(
   trackType: Int,
   init: MediaTrack.Builder.() -> Unit
 ): MediaTrack = MediaTrack.Builder(trackId, trackType).apply(init).build()
+
+/**
+ * Create a [TextTrackStyle] object.
+ */
+inline fun textTrackStyle(init: TextTrackStyle.() -> Unit): TextTrackStyle =
+  TextTrackStyle().apply(init)
 
 /**
  * Create a [VastAdsRequest] object.
