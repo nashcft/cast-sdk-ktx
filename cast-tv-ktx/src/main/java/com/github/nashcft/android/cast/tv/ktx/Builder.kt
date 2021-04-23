@@ -4,12 +4,14 @@ import android.content.Context
 import com.github.nashcft.android.cast.ktx.adBreakStatus
 import com.github.nashcft.android.cast.ktx.mediaLiveSeekableRange
 import com.github.nashcft.android.cast.ktx.mediaQueueData
+import com.github.nashcft.android.cast.ktx.sessionState
 import com.github.nashcft.android.cast.ktx.textTrackStyle
 import com.github.nashcft.android.cast.ktx.vastAdsRequest
 import com.github.nashcft.android.cast.ktx.videoInfo
 import com.google.android.gms.cast.AdBreakStatus
 import com.google.android.gms.cast.MediaLiveSeekableRange
 import com.google.android.gms.cast.MediaQueueData
+import com.google.android.gms.cast.SessionState
 import com.google.android.gms.cast.TextTrackStyle
 import com.google.android.gms.cast.VastAdsRequest
 import com.google.android.gms.cast.VideoInfo
@@ -20,6 +22,7 @@ import com.google.android.gms.cast.tv.media.MediaMetadataModifier
 import com.google.android.gms.cast.tv.media.MediaQueueManager
 import com.google.android.gms.cast.tv.media.MediaStatusModifier
 import com.google.android.gms.cast.tv.media.MediaTracksModifier
+import com.google.android.gms.cast.tv.media.StoreSessionResponseData
 
 /**
  * Create a [CastReceiverOptions] object.
@@ -136,3 +139,19 @@ inline fun MediaInfoModifier.setTextTrackStyle(
 inline fun MediaInfoModifier.setVmapAdsRequest(
   builder: VastAdsRequest.Builder.() -> Unit
 ): MediaInfoModifier = setVmapAdsRequest(vastAdsRequest(builder))
+
+/**
+ * Create a [StoreSessionResponseData] object.
+ */
+inline fun storeSessionResponseData(
+  init: StoreSessionResponseData.Builder.() -> Unit
+): StoreSessionResponseData = StoreSessionResponseData.Builder().apply(init).build()
+
+/**
+ * Set [SessionState] created from the [builder] function.
+ */
+inline fun StoreSessionResponseData.Builder.setSessionState(
+  builder: SessionState.Builder.() -> Unit
+) {
+  setSessionState(sessionState(builder))
+}

@@ -18,6 +18,7 @@ import com.google.android.gms.cast.MediaQueueData
 import com.google.android.gms.cast.MediaQueueItem
 import com.google.android.gms.cast.MediaSeekOptions
 import com.google.android.gms.cast.MediaTrack
+import com.google.android.gms.cast.SessionState
 import com.google.android.gms.cast.TextTrackStyle
 import com.google.android.gms.cast.VastAdsRequest
 import com.google.android.gms.cast.VideoInfo
@@ -152,6 +153,14 @@ inline fun mediaLoadRequestData(init: MediaLoadRequestData.Builder.() -> Unit): 
   MediaLoadRequestData.Builder().apply(init).build()
 
 /**
+ * Create a [MediaLoadRequestData] initialized with [requestData] and using the [init] function.
+ */
+inline fun mediaLoadRequestData(
+  requestData: MediaLoadRequestData,
+  init: MediaLoadRequestData.Builder.() -> Unit
+): MediaLoadRequestData = MediaLoadRequestData.Builder(requestData).apply(init).build()
+
+/**
  * Create a [MediaQueueContainerMetadata] object.
  */
 inline fun mediaQueueContainerMetadata(
@@ -202,6 +211,21 @@ inline fun mediaTrack(
   trackType: Int,
   init: MediaTrack.Builder.() -> Unit
 ): MediaTrack = MediaTrack.Builder(trackId, trackType).apply(init).build()
+
+/**
+ * Create a [SessionState] object.
+ */
+inline fun sessionState(init: SessionState.Builder.() -> Unit): SessionState =
+  SessionState.Builder().apply(init).build()
+
+/**
+ * Set [MediaLoadRequestData] created from the [builder] function.
+ */
+inline fun SessionState.Builder.setLoadRequestData(
+  builder: MediaLoadRequestData.Builder.() -> Unit
+) {
+  setLoadRequestData(mediaLoadRequestData(builder))
+}
 
 /**
  * Create a [TextTrackStyle] object.

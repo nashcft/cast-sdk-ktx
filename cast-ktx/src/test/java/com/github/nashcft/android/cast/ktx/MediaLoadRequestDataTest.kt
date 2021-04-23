@@ -19,4 +19,25 @@ class MediaLoadRequestDataTest {
       assertThat(playbackRate).isEqualTo(rate)
     }
   }
+
+  @Test
+  fun `MediaLoadRequestData builder with MediaLoadRequestData instance works`() {
+    val rate = 0.9
+    val original = mediaLoadRequestData {
+      setCredentials("test_original")
+      setPlaybackRate(rate)
+    }
+    val testCredentials = "test_actual"
+    val time = 12345L
+    val actual = mediaLoadRequestData(original) {
+      setCredentials(testCredentials)
+      setCurrentTime(time)
+    }
+
+    with(actual) {
+      assertThat(credentials).isEqualTo(testCredentials)
+      assertThat(playbackRate).isEqualTo(rate)
+      assertThat(currentTime).isEqualTo(time)
+    }
+  }
 }
