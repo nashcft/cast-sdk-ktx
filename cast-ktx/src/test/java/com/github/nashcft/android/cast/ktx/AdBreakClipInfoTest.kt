@@ -38,8 +38,8 @@ class AdBreakClipInfoTest {
     }
 
     with(adBreakClipInfo) {
-      assertThat(vastAdsRequest.adTagUrl).isEqualTo(url)
-      assertThat(vastAdsRequest.adsResponse).isEqualTo(response)
+      assertThat(vastAdsRequest?.adTagUrl).isEqualTo(url)
+      assertThat(vastAdsRequest?.adsResponse).isEqualTo(response)
     }
   }
 }

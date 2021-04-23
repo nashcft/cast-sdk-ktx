@@ -31,7 +31,7 @@ class LaunchOptionsTest {
     }
 
     with(options) {
-      assertThat(credentialsData.credentials).isEqualTo(blob)
+      assertThat(credentialsData?.credentials).isEqualTo(blob)
     }
   }
 
@@ -43,7 +43,7 @@ class LaunchOptionsTest {
     }
 
     with(options) {
-      assertThat(credentialsData.credentials).isEqualTo(blob)
+      assertThat(credentialsData?.credentials).isEqualTo(blob)
     }
   }
 }

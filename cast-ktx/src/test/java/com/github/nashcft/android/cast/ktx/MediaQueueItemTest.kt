@@ -30,12 +30,12 @@ class MediaQueueItemTest {
   fun `MediaQueueItem builder with JsonObject works`() {
     val mediaInfoId = "media ID"
     val contentType = "video/mp4"
-    val info = mediaInfo(mediaInfoId) {
-      setContentType(contentType)
-    }
     val json = JSONObject(
       """{
-      |  "media": ${info.toJson()}
+      |  "media": {
+      |    "contentId": "$mediaInfoId",
+      |    "contentType": "$contentType" 
+      |  }
       |}""".trimMargin()
     )
 
@@ -49,8 +49,8 @@ class MediaQueueItemTest {
     with(item) {
       assertThat(itemId).isEqualTo(id)
       assertThat(playbackDuration).isEqualTo(duration)
-      assertThat(media.contentId).isEqualTo(mediaInfoId)
-      assertThat(media.contentType).isEqualTo(contentType)
+      assertThat(media?.contentId).isEqualTo(mediaInfoId)
+      assertThat(media?.contentType).isEqualTo(contentType)
     }
   }
 

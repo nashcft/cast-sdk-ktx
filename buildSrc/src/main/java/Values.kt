@@ -15,9 +15,9 @@ object Deps {
   private const val coroutinesVersion = "1.4.3"
   const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
 
-  const val castSdk = "com.google.android.gms:play-services-cast:19.0.0"
-  const val castFrameworkSdk = "com.google.android.gms:play-services-cast-framework:19.0.0"
-  const val castTvSdk = "com.google.android.gms:play-services-cast-tv:17.0.0"
+  const val castSdk = "com.google.android.gms:play-services-cast:20.0.0"
+  const val castFrameworkSdk = "com.google.android.gms:play-services-cast-framework:20.0.0"
+  const val castTvSdk = "com.google.android.gms:play-services-cast-tv:18.0.0"
 
   const val androidxTestCore = "androidx.test:core-ktx:1.3.0"
   const val androidxJUnit = "androidx.test.ext:junit-ktx:1.1.2"

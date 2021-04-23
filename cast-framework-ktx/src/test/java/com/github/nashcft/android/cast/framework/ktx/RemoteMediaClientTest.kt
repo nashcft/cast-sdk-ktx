@@ -92,7 +92,7 @@ class RemoteMediaClientTest {
     val item = mockk<MediaQueueItem>()
     remoteMediaClient.awaitQueueInsertAndPlayItem(item, 10)
 
-    verify { remoteMediaClient.queueInsertAndPlayItem(item, 10, -1L, null) }
+    verify { remoteMediaClient.queueInsertAndPlayItem(item, 10, -1L, any()) }
   }
 
   @Test
@@ -104,7 +104,7 @@ class RemoteMediaClientTest {
     val items = arrayOf<MediaQueueItem>(mockk(), mockk(), mockk())
     remoteMediaClient.awaitQueueInsertItems(items, 10)
 
-    verify { remoteMediaClient.queueInsertItems(items, 10, null) }
+    verify { remoteMediaClient.queueInsertItems(items, 10, any()) }
   }
 
   @Test
@@ -115,7 +115,7 @@ class RemoteMediaClientTest {
 
     val items = listOf<MediaQueueItem>(mockk(), mockk())
     remoteMediaClient.awaitQueueInsertItems(items, 20)
-    verify { remoteMediaClient.queueInsertItems(items.toTypedArray(), 20, null) }
+    verify { remoteMediaClient.queueInsertItems(items.toTypedArray(), 20, any()) }
   }
 
   @Test
@@ -126,7 +126,7 @@ class RemoteMediaClientTest {
 
     remoteMediaClient.awaitQueueJumpToItem(10)
 
-    verify { remoteMediaClient.queueJumpToItem(10, -1L, null) }
+    verify { remoteMediaClient.queueJumpToItem(10, -1L, any()) }
   }
 
   @Test
@@ -138,7 +138,7 @@ class RemoteMediaClientTest {
     val items = arrayOf<MediaQueueItem>(mockk(), mockk(), mockk())
     remoteMediaClient.awaitQueueLoad(items, 1, MediaStatus.REPEAT_MODE_REPEAT_ALL)
 
-    verify { remoteMediaClient.queueLoad(items, 1, MediaStatus.REPEAT_MODE_REPEAT_ALL, -1L, null) }
+    verify { remoteMediaClient.queueLoad(items, 1, MediaStatus.REPEAT_MODE_REPEAT_ALL, -1L, any()) }
   }
 
   @Test
@@ -156,7 +156,7 @@ class RemoteMediaClientTest {
         2,
         MediaStatus.REPEAT_MODE_REPEAT_OFF,
         -1L,
-        null
+        any()
       )
     }
   }
@@ -169,7 +169,7 @@ class RemoteMediaClientTest {
 
     remoteMediaClient.awaitQueueMoveItemToNewIndex(11, 2)
 
-    verify { remoteMediaClient.queueMoveItemToNewIndex(11, 2, null) }
+    verify { remoteMediaClient.queueMoveItemToNewIndex(11, 2, any()) }
   }
 
   @Test
@@ -202,7 +202,7 @@ class RemoteMediaClientTest {
 
     remoteMediaClient.awaitQueueRemoveItem(0)
 
-    verify { remoteMediaClient.queueRemoveItem(0, null) }
+    verify { remoteMediaClient.queueRemoveItem(0, any()) }
   }
 
   @Test
@@ -214,7 +214,7 @@ class RemoteMediaClientTest {
     val itemIds = intArrayOf(1, 3, 5)
     remoteMediaClient.awaitQueueRemoveItems(itemIds)
 
-    verify { remoteMediaClient.queueRemoveItems(itemIds, null) }
+    verify { remoteMediaClient.queueRemoveItems(itemIds, any()) }
   }
 
   @Test
@@ -226,7 +226,7 @@ class RemoteMediaClientTest {
     val itemIds = listOf(2, 4, 6)
     remoteMediaClient.awaitQueueRemoveItems(itemIds)
 
-    verify { remoteMediaClient.queueRemoveItems(itemIds.toIntArray(), null) }
+    verify { remoteMediaClient.queueRemoveItems(itemIds.toIntArray(), any()) }
   }
 
   @Test
@@ -238,7 +238,7 @@ class RemoteMediaClientTest {
     val itemIds = intArrayOf(1, 3, 5)
     remoteMediaClient.awaitQueueReorderItems(itemIds, 1)
 
-    verify { remoteMediaClient.queueReorderItems(itemIds, 1, null) }
+    verify { remoteMediaClient.queueReorderItems(itemIds, 1, any()) }
   }
 
   @Test
@@ -250,7 +250,7 @@ class RemoteMediaClientTest {
     val itemIds = listOf(2, 4, 6)
     remoteMediaClient.awaitQueueReorderItems(itemIds, 0)
 
-    verify { remoteMediaClient.queueReorderItems(itemIds.toIntArray(), 0, null) }
+    verify { remoteMediaClient.queueReorderItems(itemIds.toIntArray(), 0, any()) }
   }
 
   @Test
@@ -261,7 +261,7 @@ class RemoteMediaClientTest {
 
     remoteMediaClient.awaitQueueSetRepeatMode(MediaStatus.REPEAT_MODE_REPEAT_SINGLE)
 
-    verify { remoteMediaClient.queueSetRepeatMode(MediaStatus.REPEAT_MODE_REPEAT_SINGLE, null) }
+    verify { remoteMediaClient.queueSetRepeatMode(MediaStatus.REPEAT_MODE_REPEAT_SINGLE, any()) }
   }
 
   @Test
@@ -273,7 +273,7 @@ class RemoteMediaClientTest {
     val items = arrayOf<MediaQueueItem>(mockk(), mockk())
     remoteMediaClient.awaitQueueUpdateItems(items)
 
-    verify { remoteMediaClient.queueUpdateItems(items, null) }
+    verify { remoteMediaClient.queueUpdateItems(items, any()) }
   }
 
   @Test
@@ -285,7 +285,7 @@ class RemoteMediaClientTest {
     val items = listOf<MediaQueueItem>(mockk(), mockk())
     remoteMediaClient.awaitQueueUpdateItems(items)
 
-    verify { remoteMediaClient.queueUpdateItems(items.toTypedArray(), null) }
+    verify { remoteMediaClient.queueUpdateItems(items.toTypedArray(), any()) }
   }
 
   @Test

@@ -53,7 +53,7 @@ class MediaInfoTest {
     }
 
     with(info) {
-      assertThat(vmapAdsRequest.adTagUrl).isEqualTo(url)
+      assertThat(vmapAdsRequest?.adTagUrl).isEqualTo(url)
     }
   }
 }

@@ -34,8 +34,8 @@ class CastMediaOptionsTest {
     }
 
     with(options) {
-      assertThat(notificationOptions.targetActivityClassName).isEqualTo(activityName)
-      assertThat(notificationOptions.skipStepMs).isEqualTo(skipStep)
+      assertThat(notificationOptions?.targetActivityClassName).isEqualTo(activityName)
+      assertThat(notificationOptions?.skipStepMs).isEqualTo(skipStep)
     }
   }
 }

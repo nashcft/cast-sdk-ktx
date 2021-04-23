@@ -34,8 +34,8 @@ class CastOptionsTest {
     }
 
     with(options) {
-      assertThat(castMediaOptions.expandedControllerActivityClassName).isEqualTo(activityName)
-      assertThat(castMediaOptions.mediaIntentReceiverClassName).isEqualTo(receiverName)
+      assertThat(castMediaOptions?.expandedControllerActivityClassName).isEqualTo(activityName)
+      assertThat(castMediaOptions?.mediaIntentReceiverClassName).isEqualTo(receiverName)
     }
   }
 

@@ -54,7 +54,7 @@ suspend fun RemoteMediaClient.awaitPlay(
  */
 suspend fun RemoteMediaClient.awaitQueueAppendItem(
   item: MediaQueueItem,
-  customData: JSONObject? = null
+  customData: JSONObject = JSONObject()
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine {
   awaitPendingResult(it) { queueAppendItem(item, customData) }
 }
@@ -66,7 +66,7 @@ suspend fun RemoteMediaClient.awaitQueueInsertAndPlayItem(
   item: MediaQueueItem,
   insertBeforeItemId: Int,
   playPosition: Long = -1L,
-  customData: JSONObject? = null
+  customData: JSONObject = JSONObject()
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine {
   awaitPendingResult(it) {
     queueInsertAndPlayItem(item, insertBeforeItemId, playPosition, customData)
@@ -79,7 +79,7 @@ suspend fun RemoteMediaClient.awaitQueueInsertAndPlayItem(
 suspend fun RemoteMediaClient.awaitQueueInsertItems(
   itemsToInsert: Array<MediaQueueItem>,
   insertBeforeItemId: Int,
-  customData: JSONObject? = null
+  customData: JSONObject = JSONObject()
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine {
   awaitPendingResult(it) { queueInsertItems(itemsToInsert, insertBeforeItemId, customData) }
 }
@@ -90,7 +90,7 @@ suspend fun RemoteMediaClient.awaitQueueInsertItems(
 suspend fun RemoteMediaClient.awaitQueueInsertItems(
   itemsToInsert: Collection<MediaQueueItem>,
   insertBeforeItemId: Int,
-  customData: JSONObject? = null
+  customData: JSONObject = JSONObject()
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine {
   awaitPendingResult(it) {
     queueInsertItems(itemsToInsert.toTypedArray(), insertBeforeItemId, customData)
@@ -103,7 +103,7 @@ suspend fun RemoteMediaClient.awaitQueueInsertItems(
 suspend fun RemoteMediaClient.awaitQueueJumpToItem(
   itemId: Int,
   playPosition: Long = -1L,
-  customData: JSONObject? = null
+  customData: JSONObject = JSONObject()
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine {
   awaitPendingResult(it) { queueJumpToItem(itemId, playPosition, customData) }
 }
@@ -116,7 +116,7 @@ suspend fun RemoteMediaClient.awaitQueueLoad(
   startIndex: Int,
   repeatMode: Int,
   playPosition: Long = -1L,
-  customData: JSONObject? = null
+  customData: JSONObject = JSONObject()
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine {
   awaitPendingResult(it) { queueLoad(items, startIndex, repeatMode, playPosition, customData) }
 }
@@ -129,7 +129,7 @@ suspend fun RemoteMediaClient.awaitQueueLoad(
   startIndex: Int,
   repeatMode: Int,
   playPosition: Long = -1L,
-  customData: JSONObject? = null
+  customData: JSONObject = JSONObject()
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine {
   awaitPendingResult(it) {
     queueLoad(items.toTypedArray(), startIndex, repeatMode, playPosition, customData)
@@ -142,7 +142,7 @@ suspend fun RemoteMediaClient.awaitQueueLoad(
 suspend fun RemoteMediaClient.awaitQueueMoveItemToNewIndex(
   itemId: Int,
   newIndex: Int,
-  customData: JSONObject? = null
+  customData: JSONObject = JSONObject()
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine {
   awaitPendingResult(it) { queueMoveItemToNewIndex(itemId, newIndex, customData) }
 }
@@ -170,7 +170,7 @@ suspend fun RemoteMediaClient.awaitQueuePrev(
  */
 suspend fun RemoteMediaClient.awaitQueueRemoveItem(
   itemId: Int,
-  customData: JSONObject? = null
+  customData: JSONObject = JSONObject()
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine {
   awaitPendingResult(it) { queueRemoveItem(itemId, customData) }
 }
@@ -180,7 +180,7 @@ suspend fun RemoteMediaClient.awaitQueueRemoveItem(
  */
 suspend fun RemoteMediaClient.awaitQueueRemoveItems(
   itemIdsToRemove: IntArray,
-  customData: JSONObject? = null
+  customData: JSONObject = JSONObject()
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine {
   awaitPendingResult(it) { queueRemoveItems(itemIdsToRemove, customData) }
 }
@@ -190,7 +190,7 @@ suspend fun RemoteMediaClient.awaitQueueRemoveItems(
  */
 suspend fun RemoteMediaClient.awaitQueueRemoveItems(
   itemIdsToRemove: Collection<Int>,
-  customData: JSONObject? = null
+  customData: JSONObject = JSONObject()
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine {
   awaitPendingResult(it) { queueRemoveItems(itemIdsToRemove.toIntArray(), customData) }
 }
@@ -201,7 +201,7 @@ suspend fun RemoteMediaClient.awaitQueueRemoveItems(
 suspend fun RemoteMediaClient.awaitQueueReorderItems(
   itemIdsToReorder: IntArray,
   insertBeforeItemId: Int,
-  customData: JSONObject? = null
+  customData: JSONObject = JSONObject()
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine {
   awaitPendingResult(it) { queueReorderItems(itemIdsToReorder, insertBeforeItemId, customData) }
 }
@@ -212,7 +212,7 @@ suspend fun RemoteMediaClient.awaitQueueReorderItems(
 suspend fun RemoteMediaClient.awaitQueueReorderItems(
   itemIdsToReorder: Collection<Int>,
   insertBeforeItemId: Int,
-  customData: JSONObject? = null
+  customData: JSONObject = JSONObject()
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine {
   awaitPendingResult(it) {
     queueReorderItems(itemIdsToReorder.toIntArray(), insertBeforeItemId, customData)
@@ -224,7 +224,7 @@ suspend fun RemoteMediaClient.awaitQueueReorderItems(
  */
 suspend fun RemoteMediaClient.awaitQueueSetRepeatMode(
   repeatMode: Int,
-  customData: JSONObject? = null
+  customData: JSONObject = JSONObject()
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine {
   awaitPendingResult(it) { queueSetRepeatMode(repeatMode, customData) }
 }
@@ -234,7 +234,7 @@ suspend fun RemoteMediaClient.awaitQueueSetRepeatMode(
  */
 suspend fun RemoteMediaClient.awaitQueueUpdateItems(
   itemsToUpdate: Array<MediaQueueItem>,
-  customData: JSONObject? = null
+  customData: JSONObject = JSONObject()
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine {
   awaitPendingResult(it) { queueUpdateItems(itemsToUpdate, customData) }
 }
@@ -244,7 +244,7 @@ suspend fun RemoteMediaClient.awaitQueueUpdateItems(
  */
 suspend fun RemoteMediaClient.awaitQueueUpdateItems(
   itemsToUpdate: Collection<MediaQueueItem>,
-  customData: JSONObject? = null
+  customData: JSONObject = JSONObject()
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine {
   awaitPendingResult(it) { queueUpdateItems(itemsToUpdate.toTypedArray(), customData) }
 }

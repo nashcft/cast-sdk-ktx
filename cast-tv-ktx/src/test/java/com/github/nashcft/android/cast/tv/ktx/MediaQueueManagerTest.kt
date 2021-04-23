@@ -16,7 +16,10 @@ class MediaQueueManagerTest {
       setName(queueName)
       setQueueId(id)
     }
-    with(mediaQueueManager.mediaQueueData) {
+
+    val mediaQueueData =
+      mediaQueueManager.mediaQueueData ?: error("getMediaQueueData() returns null")
+    with(mediaQueueData) {
       assertThat(name).isEqualTo(queueName)
       assertThat(queueId).isEqualTo(id)
     }
