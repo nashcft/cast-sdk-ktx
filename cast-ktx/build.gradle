@@ -39,3 +39,10 @@ dependencies {
   testImplementation(Deps.robolectric)
   testImplementation(Deps.truth)
 }
+
+ext {
+  releaseArtifactId = "cast-ktx"
+  libraryDescription = "KTX library for Cast SDK (play-services-cast)"
+}
+
+apply from: "../publish.gradle"

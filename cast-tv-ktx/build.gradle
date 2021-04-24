@@ -41,3 +41,10 @@ dependencies {
   testImplementation(Deps.truth)
   testImplementation(Deps.mockk)
 }
+
+ext {
+  releaseArtifactId = "cast-tv-ktx"
+  libraryDescription = "KTX library for Cast SDK (play-services-cast-tv)"
+}
+
+apply from: "../publish.gradle"
