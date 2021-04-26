@@ -43,6 +43,7 @@ dependencies {
 }
 
 ext {
+  releaseVersion = ProjectConfig.releaseVersion
   releaseArtifactId = "cast-tv-ktx"
   libraryDescription = "KTX library for Cast SDK (play-services-cast-tv)"
 }

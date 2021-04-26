@@ -44,6 +44,7 @@ dependencies {
 }
 
 ext {
+  releaseVersion = ProjectConfig.releaseVersion
   releaseArtifactId = "cast-framework-ktx"
   libraryDescription = "KTX library for Cast SDK (play-services-cast-framework)"
 }
