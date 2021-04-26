@@ -1,4 +1,6 @@
 object ProjectConfig {
+  const val releaseVersion = "0.2.0-SNAPSHOT"
+
   const val compileSdkVersion = 30
   const val targetSdkVersion = 30
   const val minSdkVersion = 19
