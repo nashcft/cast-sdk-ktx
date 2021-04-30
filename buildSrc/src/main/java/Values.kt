@@ -1,5 +1,5 @@
 object ProjectConfig {
-  const val releaseVersion = "0.2.0-SNAPSHOT"
+  const val releaseVersion = "0.3.0-SNAPSHOT"
 
   const val compileSdkVersion = 30
   const val targetSdkVersion = 30
@@ -10,7 +10,7 @@ object Deps {
 
   const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0-rc01"
 
-  private const val kotlinVersion = "1.4.32"
+  private const val kotlinVersion = "1.5.0"
   const val kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
   const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 
