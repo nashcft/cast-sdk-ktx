@@ -24,11 +24,10 @@ object Deps {
   const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0-rc01"
 
   private const val kotlinVersion = "1.5.0"
-  const val kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+  const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
   const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 
-  private const val coroutinesVersion = "1.4.3"
-  const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+  const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3"
 
   const val castSdk = "com.google.android.gms:play-services-cast:20.0.0"
   const val castFrameworkSdk = "com.google.android.gms:play-services-cast-framework:20.0.0"

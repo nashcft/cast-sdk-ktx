@@ -4,28 +4,7 @@ plugins {
 }
 
 android {
-  compileSdkVersion(ProjectConfig.compileSdkVersion)
-
-  defaultConfig {
-    minSdkVersion(ProjectConfig.minSdkVersion)
-    targetSdkVersion(ProjectConfig.targetSdkVersion)
-
-    consumerProguardFiles("proguard-rules.pro")
-  }
-
-  compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-  }
-
-  buildFeatures {
-    buildConfig = false
-  }
-
-  testOptions.unitTests {
-    isIncludeAndroidResources = true
-    isReturnDefaultValues = true
-  }
+  commonConfig()
 }
 
 dependencies {
