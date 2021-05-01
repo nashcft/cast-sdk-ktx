@@ -1,6 +1,6 @@
 plugins {
   id("com.android.library")
-  id("kotlin-android")
+  kotlin("android")
   id("maven-publish")
 }
 
@@ -24,8 +24,8 @@ android {
   }
 
   testOptions.unitTests {
-    includeAndroidResources = true
-    returnDefaultValues = true
+    isIncludeAndroidResources = true
+    isReturnDefaultValues = true
   }
 }
 
@@ -40,10 +40,10 @@ dependencies {
   testImplementation(Deps.truth)
 }
 
-ext {
-  releaseVersion = ProjectConfig.releaseVersion
-  releaseArtifactId = "cast-ktx"
-  libraryDescription = "KTX library for Cast SDK (play-services-cast)"
+extra.apply {
+  set("releaseVersion", ProjectConfig.releaseVersion)
+  set("releaseArtifactId", "cast-ktx")
+  set("libraryDescription", "KTX library for Cast SDK (play-services-cast)")
 }
 
-apply from: "../publish.gradle"
+apply(from = "../publish.gradle")

@@ -1,6 +1,6 @@
 plugins {
   id("com.android.library")
-  id("kotlin-android")
+  kotlin("android")
   id("maven-publish")
 }
 
@@ -24,28 +24,29 @@ android {
   }
 
   testOptions.unitTests {
-    includeAndroidResources = true
-    returnDefaultValues = true
+    isIncludeAndroidResources = true
+    isReturnDefaultValues = true
   }
 }
 
 dependencies {
   implementation(Deps.kotlinStdLib)
 
+  implementation(Deps.coroutinesCore)
+
   api(project(":cast-ktx"))
-  api(Deps.castTvSdk)
+  api(Deps.castFrameworkSdk)
 
   testImplementation(Deps.androidxTestCore)
   testImplementation(Deps.androidxJUnit)
-  testImplementation(Deps.robolectric)
   testImplementation(Deps.truth)
   testImplementation(Deps.mockk)
 }
 
-ext {
-  releaseVersion = ProjectConfig.releaseVersion
-  releaseArtifactId = "cast-tv-ktx"
-  libraryDescription = "KTX library for Cast SDK (play-services-cast-tv)"
+extra.apply {
+  set("releaseVersion", ProjectConfig.releaseVersion)
+  set("releaseArtifactId", "cast-framework-ktx")
+  set("libraryDescription", "KTX library for Cast SDK (play-services-cast-framework)")
 }
 
-apply from: "../publish.gradle"
+apply(from = "../publish.gradle")

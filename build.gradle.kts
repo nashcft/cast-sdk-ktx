@@ -1,4 +1,5 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 buildscript {
   repositories {
     google()
@@ -11,7 +12,7 @@ buildscript {
 }
 
 allprojects {
-  tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+  tasks.withType<KotlinCompile>().all {
     kotlinOptions {
       jvmTarget = "1.8"
     }
