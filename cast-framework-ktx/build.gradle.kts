@@ -1,7 +1,6 @@
 plugins {
   id("com.android.library")
   kotlin("android")
-  id("maven-publish")
 }
 
 android {
@@ -43,10 +42,7 @@ dependencies {
   testImplementation(Deps.mockk)
 }
 
-extra.apply {
-  set("releaseVersion", ProjectConfig.releaseVersion)
-  set("releaseArtifactId", "cast-framework-ktx")
-  set("libraryDescription", "KTX library for Cast SDK (play-services-cast-framework)")
-}
-
-apply(from = "../publish.gradle")
+mavenPublication(
+  releaseArtifactId = "cast-framework-ktx",
+  libraryDescription = "KTX library for Cast SDK (play-services-cast-framework)"
+)
