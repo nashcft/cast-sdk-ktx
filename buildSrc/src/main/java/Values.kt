@@ -21,7 +21,7 @@ internal object PublicationConfig {
 
 object Deps {
 
-  const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0-rc01"
+  const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0"
 
   private const val kotlinVersion = "1.5.0"
   const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
