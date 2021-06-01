@@ -1,15 +1,16 @@
-import com.android.build.gradle.LibraryExtension
+import com.android.build.api.dsl.LibraryExtension
 import org.gradle.api.Action
 import org.gradle.api.JavaVersion
 import org.gradle.api.plugins.ExtensionAware
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
+@Suppress("UnstableApiUsage")
 fun LibraryExtension.commonConfig() {
-  compileSdkVersion(ProjectConfig.compileSdkVersion)
+  compileSdk = ProjectConfig.compileSdkVersion
 
   defaultConfig {
-    minSdkVersion(ProjectConfig.minSdkVersion)
-    targetSdkVersion(ProjectConfig.targetSdkVersion)
+    minSdk = ProjectConfig.minSdkVersion
+    targetSdk = ProjectConfig.targetSdkVersion
 
     consumerProguardFiles("proguard-rules.pro")
   }
@@ -33,6 +34,7 @@ fun LibraryExtension.commonConfig() {
   }
 }
 
+@Suppress("UnstableApiUsage")
 private fun LibraryExtension.kotlinOptions(configure: Action<KotlinJvmOptions>) =
   (this as ExtensionAware).extensions.configure("kotlinOptions", configure)
 
