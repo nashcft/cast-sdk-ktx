@@ -9,6 +9,7 @@ android {
 
 dependencies {
   implementation(Deps.kotlinStdLib)
+  implementation(Deps.kotlinStdLibJdk8)
 
   implementation(Deps.coroutinesCore)
 
