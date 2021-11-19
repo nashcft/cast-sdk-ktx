@@ -65,6 +65,8 @@ inline fun castOptions(
 /**
  * Create a [CastRemoteDisplayLocalService.NotificationSettings] object.
  */
+@Suppress("DeprecatedCallableAddReplaceWith")
+@Deprecated("The Remote Display feature in Cast SDK has been deprecated.")
 inline fun notificationSettings(
   init: CastRemoteDisplayLocalService.NotificationSettings.Builder.() -> Unit
 ): CastRemoteDisplayLocalService.NotificationSettings =
