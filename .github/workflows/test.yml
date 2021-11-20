@@ -1,15 +1,14 @@
 name: CI
 
-on:
-  push:
-    branches: [ main ]
-  pull_request: { }
+on: push
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
       - name: Setup JDK
         uses: actions/setup-java@v2
         with:
@@ -17,9 +16,9 @@ jobs:
           java-version: 11
       - uses: actions/cache@v2
         with:
-          path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/Values.kt') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle.kts', 'buildSrc/src/**/*.kt', '**/gradle.properties', 'gradle/**') }}
       - name: Run test
         run: ./gradlew test --stacktrace
