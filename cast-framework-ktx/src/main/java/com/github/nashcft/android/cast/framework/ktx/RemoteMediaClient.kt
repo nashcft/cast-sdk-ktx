@@ -224,7 +224,7 @@ suspend fun RemoteMediaClient.awaitQueueReorderItems(
  */
 suspend fun RemoteMediaClient.awaitQueueSetRepeatMode(
   repeatMode: Int,
-  customData: JSONObject = JSONObject()
+  customData: JSONObject? = null
 ): RemoteMediaClient.MediaChannelResult = suspendCancellableCoroutine {
   awaitPendingResult(it) { queueSetRepeatMode(repeatMode, customData) }
 }
