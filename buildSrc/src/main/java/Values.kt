@@ -17,6 +17,8 @@ internal object PublicationConfig {
   const val siteUrl = "https://github.com/nashcft/cast-sdk-ktx"
   const val connection = "scm:git:git://github.com/nashcft/cast-sdk-ktx.git"
   const val developerConnection = "scm:git:ssh://git@github.com/nashcft/cast-sdk-ktx.git"
+
+  const val publishingComponentName_release = "release"
 }
 
 object Deps {
