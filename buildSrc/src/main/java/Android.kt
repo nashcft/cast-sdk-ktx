@@ -32,13 +32,6 @@ fun LibraryExtension.commonConfig() {
     isIncludeAndroidResources = true
     isReturnDefaultValues = true
   }
-
-  publishing {
-    singleVariant(PublicationConfig.publishingComponentName_release) {
-      withSourcesJar()
-      withJavadocJar()
-    }
-  }
 }
 
 @Suppress("UnstableApiUsage")

@@ -16,8 +16,8 @@ fun Project.mavenPublication(
   afterEvaluate {
     publishing {
       publications {
-        create<MavenPublication>(PublicationConfig.publishingComponentName_release) {
-          from(components[PublicationConfig.publishingComponentName_release])
+        create<MavenPublication>("release") {
+          from(components["release"])
           groupId = PublicationConfig.groupId
           artifactId = releaseArtifactId
           version = PublicationConfig.releaseVersion
