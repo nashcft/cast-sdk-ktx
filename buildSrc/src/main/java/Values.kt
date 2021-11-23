@@ -5,7 +5,7 @@ object ProjectConfig {
 }
 
 internal object PublicationConfig {
-  const val releaseVersion = "0.3.0-SNAPSHOT"
+  const val releaseVersion = "0.4.0-SNAPSHOT"
   const val groupId = "com.github.nashcft.cast-sdk-ktx"
 
   const val license = "The Apache License, Version 2.0"
