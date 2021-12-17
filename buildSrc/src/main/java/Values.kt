@@ -23,7 +23,7 @@ internal object PublicationConfig {
 
 object Deps {
 
-  const val androidGradlePlugin = "com.android.tools.build:gradle:7.1.0-beta03"
+  const val androidGradlePlugin = "com.android.tools.build:gradle:7.1.0-beta05"
 
   private const val kotlinVersion = "1.6.0"
   const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
@@ -32,8 +32,8 @@ object Deps {
 
   const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
 
-  const val castSdk = "com.google.android.gms:play-services-cast:20.1.0"
-  const val castFrameworkSdk = "com.google.android.gms:play-services-cast-framework:20.1.0"
+  const val castSdk = "com.google.android.gms:play-services-cast:21.0.0"
+  const val castFrameworkSdk = "com.google.android.gms:play-services-cast-framework:21.0.0"
   const val castTvSdk = "com.google.android.gms:play-services-cast-tv:18.0.0"
 
   const val androidxTestCore = "androidx.test:core-ktx:1.4.0"
