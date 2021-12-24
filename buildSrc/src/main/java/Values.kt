@@ -25,20 +25,20 @@ object Deps {
 
   const val androidGradlePlugin = "com.android.tools.build:gradle:7.1.0-beta05"
 
-  private const val kotlinVersion = "1.6.0"
+  private const val kotlinVersion = "1.6.10"
   const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
   const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
   const val kotlinStdLibJdk8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
 
-  const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
+  const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
 
   const val castSdk = "com.google.android.gms:play-services-cast:21.0.0"
   const val castFrameworkSdk = "com.google.android.gms:play-services-cast-framework:21.0.0"
-  const val castTvSdk = "com.google.android.gms:play-services-cast-tv:18.0.0"
+  const val castTvSdk = "com.google.android.gms:play-services-cast-tv:19.0.0"
 
   const val androidxTestCore = "androidx.test:core-ktx:1.4.0"
   const val androidxJUnit = "androidx.test.ext:junit-ktx:1.1.3"
-  const val robolectric = "org.robolectric:robolectric:4.7.1"
+  const val robolectric = "org.robolectric:robolectric:4.7.3"
 
   const val truth = "com.google.truth:truth:1.1.3"
   const val mockk = "io.mockk:mockk:1.12.1"

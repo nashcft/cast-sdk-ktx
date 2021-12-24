@@ -123,7 +123,7 @@ inline fun MediaStatusModifier.setVideoInfo(
 inline fun MediaInfoModifier.setMetadataModifier(
   builder: MediaMetadataModifier.() -> Unit
 ) {
-  metadataModifier = MediaMetadataModifier().apply(builder)
+  setMetadataModifier(MediaMetadataModifier().apply(builder))
 }
 
 /**
