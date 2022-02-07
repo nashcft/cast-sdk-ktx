@@ -4,7 +4,6 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.plugins.ExtensionAware
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
-@Suppress("UnstableApiUsage")
 fun LibraryExtension.commonConfig() {
   compileSdk = ProjectConfig.compileSdkVersion
 
