@@ -1,27 +1,23 @@
 plugins {
-  id("com.android.library")
-  kotlin("android")
-}
-
-android {
-  commonConfig()
+  id("android-config")
+  id("publication-config")
 }
 
 dependencies {
-  implementation(Deps.kotlinStdLib)
+  implementation(libs.kotlin.stdlib)
 
-  implementation(Deps.coroutinesCore)
+  implementation(libs.kotlinx.coroutines.core)
 
   api(project(":cast-ktx"))
-  api(Deps.castFrameworkSdk)
+  api(libs.cast.framework)
 
-  testImplementation(Deps.androidxTestCore)
-  testImplementation(Deps.androidxJUnit)
-  testImplementation(Deps.truth)
-  testImplementation(Deps.mockk)
+  testImplementation(libs.androidx.test.core)
+  testImplementation(libs.androidx.test.junit)
+  testImplementation(libs.truth)
+  testImplementation(libs.mockk)
 }
 
-mavenPublication(
+publicationConfig.mavenPublication(
   releaseArtifactId = "cast-framework-ktx",
   libraryDescription = "KTX library for Cast SDK (play-services-cast-framework)"
 )

@@ -1,10 +1,10 @@
-import com.android.build.api.dsl.LibraryExtension
-import org.gradle.api.Action
-import org.gradle.api.JavaVersion
-import org.gradle.api.plugins.ExtensionAware
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
+plugins {
+  id("com.android.library")
+  kotlin("android")
+}
 
-fun LibraryExtension.commonConfig() {
+@Suppress("UnstableApiUsage")
+android {
   compileSdk = ProjectConfig.compileSdkVersion
 
   defaultConfig {
@@ -39,8 +39,3 @@ fun LibraryExtension.commonConfig() {
     }
   }
 }
-
-@Suppress("UnstableApiUsage")
-private fun LibraryExtension.kotlinOptions(configure: Action<KotlinJvmOptions>) =
-  (this as ExtensionAware).extensions.configure("kotlinOptions", configure)
-

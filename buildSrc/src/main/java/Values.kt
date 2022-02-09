@@ -1,4 +1,4 @@
-object ProjectConfig {
+internal object ProjectConfig {
   const val compileSdkVersion = 31
   const val targetSdkVersion = 31
   const val minSdkVersion = 19
@@ -19,27 +19,4 @@ internal object PublicationConfig {
   const val developerConnection = "scm:git:ssh://git@github.com/nashcft/cast-sdk-ktx.git"
 
   const val publishingComponentName_release = "release"
-}
-
-object Deps {
-
-  const val androidGradlePlugin = "com.android.tools.build:gradle:7.1.1"
-
-  private const val kotlinVersion = "1.6.10"
-  const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-  const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
-  const val kotlinStdLibJdk8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
-
-  const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
-
-  const val castSdk = "com.google.android.gms:play-services-cast:21.0.1"
-  const val castFrameworkSdk = "com.google.android.gms:play-services-cast-framework:21.0.1"
-  const val castTvSdk = "com.google.android.gms:play-services-cast-tv:19.0.1"
-
-  const val androidxTestCore = "androidx.test:core-ktx:1.4.0"
-  const val androidxJUnit = "androidx.test.ext:junit-ktx:1.1.3"
-  const val robolectric = "org.robolectric:robolectric:4.7.3"
-
-  const val truth = "com.google.truth:truth:1.1.3"
-  const val mockk = "io.mockk:mockk:1.12.1"
 }
