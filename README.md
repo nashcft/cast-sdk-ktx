@@ -9,24 +9,29 @@ Kotlin extension libraries for [Google Cast SDK for Android](https://developers.
 
 Add JitPack repository to project's `repositories` block:
 
-```groovy
+```kotlin
 repositories {
-  maven { url "https://jitpack.io" }
+  maven {
+    url = uri("https://jitpack.io")
+    content {
+      includeGroup("com.github.nashcft.cast-sdk-ktx")
+    }
+  }
 }
 ```
 
 then replace each of Cast SDK dependencies with its ktx library.
 
-```groovy
+```kotlin
 dependencies {
 
   // for play-services-cast
-  implementation "com.github.nashcft.cast-sdk-ktx:cast-ktx:$cast_sdk_ktx_version"
+  implementation("com.github.nashcft.cast-sdk-ktx:cast-ktx:$cast_sdk_ktx_version")
   
   // for play-services-cast-framework
-  implementation "com.github.nashcft.cast-sdk-ktx:cast-framework-ktx:$cast_sdk_ktx_version"
+  implementation("com.github.nashcft.cast-sdk-ktx:cast-framework-ktx:$cast_sdk_ktx_version")
   
   // for play-services-cast-tv
-  implementation "com.github.nashcft.cast-sdk-ktx:cast-tv-ktx:$cast_sdk_ktx_version"
+  implementation("com.github.nashcft.cast-sdk-ktx:cast-tv-ktx:$cast_sdk_ktx_version")
 }
 ```
