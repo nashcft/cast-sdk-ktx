@@ -15,6 +15,8 @@ dependencyResolutionManagement {
   }
 }
 
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 include(":cast-ktx")
 include(":cast-framework-ktx")
 include(":cast-tv-ktx")

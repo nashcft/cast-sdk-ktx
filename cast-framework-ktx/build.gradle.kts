@@ -8,7 +8,7 @@ dependencies {
 
   implementation(libs.kotlinx.coroutines.core)
 
-  api(project(":cast-ktx"))
+  api(projects.castKtx)
   api(libs.cast.framework)
 
   testImplementation(libs.androidx.test.core)

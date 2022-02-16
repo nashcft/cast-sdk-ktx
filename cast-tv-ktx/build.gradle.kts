@@ -6,7 +6,7 @@ plugins {
 dependencies {
   implementation(libs.kotlin.stdlib)
 
-  api(project(":cast-ktx"))
+  api(projects.castKtx)
   api(libs.cast.tv)
 
   testImplementation(libs.androidx.test.core)
