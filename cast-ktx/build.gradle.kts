@@ -3,6 +3,10 @@ plugins {
   id("publication-config")
 }
 
+android {
+  namespace = "com.github.nashcft.android.cast.ktx"
+}
+
 dependencies {
   implementation(libs.kotlin.stdlib)
 

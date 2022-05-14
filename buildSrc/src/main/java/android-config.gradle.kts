@@ -1,15 +1,15 @@
 plugins {
   id("com.android.library")
-  kotlin("android")
+  id("org.jetbrains.kotlin.android")
 }
 
 @Suppress("UnstableApiUsage")
 android {
-  compileSdk = ProjectConfig.compileSdkVersion
+  compileSdk = 31
 
   defaultConfig {
-    minSdk = ProjectConfig.minSdkVersion
-    targetSdk = ProjectConfig.targetSdkVersion
+    minSdk = 19
+    targetSdk = 31
 
     consumerProguardFiles("proguard-rules.pro")
   }
@@ -30,12 +30,5 @@ android {
   testOptions.unitTests {
     isIncludeAndroidResources = true
     isReturnDefaultValues = true
-  }
-
-  publishing {
-    singleVariant(PublicationConfig.publishingComponentName_release) {
-      withSourcesJar()
-      withJavadocJar()
-    }
   }
 }
