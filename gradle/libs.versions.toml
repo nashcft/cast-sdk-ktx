@@ -7,9 +7,9 @@ kotlin-stdlib-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", versi
 
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version = "1.6.4" }
 
-cast = { module = "com.google.android.gms:play-services-cast", version = "21.0.1" }
-cast-framework = { module = "com.google.android.gms:play-services-cast-framework", version = "21.0.1" }
-cast-tv = { module = "com.google.android.gms:play-services-cast-tv", version = "19.0.1" }
+cast = { module = "com.google.android.gms:play-services-cast", version = "21.1.0" }
+cast-framework = { module = "com.google.android.gms:play-services-cast-framework", version = "21.1.0" }
+cast-tv = { module = "com.google.android.gms:play-services-cast-tv", version = "20.0.0" }
 
 androidx-test-core = { module = "androidx.test:core-ktx", version = "1.4.0" }
 androidx-test-junit = { module = "androidx.test.ext:junit-ktx", version = "1.1.3" }
