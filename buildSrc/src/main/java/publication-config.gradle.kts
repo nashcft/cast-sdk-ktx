@@ -5,7 +5,7 @@ plugins {
 }
 
 private object PublicationConfig {
-  const val releaseVersion = "0.5.0-SNAPSHOT"
+  const val releaseVersion = "0.6.0-SNAPSHOT"
   const val groupId = "com.github.nashcft.cast-sdk-ktx"
 
   const val license = "The Apache License, Version 2.0"
