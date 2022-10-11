@@ -5,11 +5,11 @@ plugins {
 
 @Suppress("UnstableApiUsage")
 android {
-  compileSdk = 31
+  compileSdk = 33
 
   defaultConfig {
     minSdk = 19
-    targetSdk = 31
+    targetSdk = 33
 
     consumerProguardFiles("proguard-rules.pro")
   }
